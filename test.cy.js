@@ -7,9 +7,8 @@ describe('before each test', function(){
     test.visit()
   })
 
-  
 
-  /*
+  
   it('valid time', function(){
     test.Starting_Date("10/19/2022")
     test.Leaving_Date("10/20/2022")
@@ -65,6 +64,7 @@ describe('before each test', function(){
     test.Error_DateDiff()
   })
 
+  
   it('same date but leave time earlier than starting time', function(){
     test.Starting_Date("10/19/2022")
     test.Leaving_Date("10/19/2022")
@@ -77,7 +77,7 @@ describe('before each test', function(){
 
     test.Calculate()
 
-    test.Error_TimeDiff()
+    test.Error_DateDiff()
   })
   
 
@@ -164,7 +164,7 @@ describe('before each test', function(){
 
     test.price(9)
   })
-*/
+
 
   it('Valet Parking less than 5 hours', function(){
     test.ParkingLot('Valet Parking')
@@ -180,5 +180,15 @@ describe('before each test', function(){
     test.Calculate()
 
     test.price(12)
+  })
+
+  
+
+  it('Only entry date', function(){
+    test.ParkingLot('Valet Parking')
+    test.Starting_Date("10/20/2022")
+
+    test.Calculate()
+    test.Error_NoDate()
   })
 })
